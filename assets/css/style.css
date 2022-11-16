@@ -1,0 +1,53 @@
+#menuHeader{
+    position: relative;
+    border: 1px red solid;
+    display: flex;
+    justify-content: space-between;
+}
+#menuHeader ul{
+    width: 100%;
+    border: 1px green solid;
+    position: absolute;
+    top:36px; 
+    left: -102%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* max-height: 0; */
+    overflow: hidden;
+    transition: all 0.5s;
+}
+#brand,#burger{
+    padding: 0.5rem;
+}
+
+#burger{
+    color: red;
+}
+#box{
+    display: none;
+}
+#box:checked ~ ul{
+   /*  max-height: 500px; */
+    /* background-color: blue; */
+    left: 0;
+}
+#box:not(:checked ) ~ ul{
+    /* max-height: 0; */
+    /* background-color: red; */
+    left: -102%;
+}
+@media screen and (min-width:576px) {
+
+    #menuHeader label{
+        display: none;
+        
+    }
+    #menuHeader ul{
+        position: static;
+        width: fit-content;
+        flex-direction: row;
+    }
+}
